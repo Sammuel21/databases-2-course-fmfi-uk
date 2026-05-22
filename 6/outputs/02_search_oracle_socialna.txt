@@ -1,0 +1,9 @@
+Pager usage is off.
+Timing is on.
+   id   |                                                   name                                                   |   identifier    |     department     |           customer           |            supplier            | published_on | text_rank | boosted_rank 
+--------+----------------------------------------------------------------------------------------------------------+-----------------+--------------------+------------------------------+--------------------------------+--------------+-----------+--------------
+ 101340 | Zmluva o poskytovaní štandardných služieb Oracle \"Software Update License & Support\"                   | BA-67827/2011   | Sociálna poisťovňa | Sociálna poisťovňa, ústredie | Oracle Slovensko, spol. s r.o. | 2011-05-02   |  0.070000 |     0.070013
+ 736333 | Zmluva o vysporiadaní používania licenčných technológií ORACLE v informačnom systéme Sociálnej poisťovne | 32941-1/2013-BA | Sociálna poisťovňa | Sociálna poisťovňa, ústredie | Indexer, s.r.o.                | 2013-06-14   |  0.016667 |     0.016670
+(2 rows)
+
+Time: 90.638 ms

@@ -1,0 +1,38 @@
+Pager usage is off.
+Timing is on.
+CREATE EXTENSION
+Time: 7.801 ms
+CREATE EXTENSION
+Time: 78.496 ms
+DROP INDEX
+Time: 1.604 ms
+DROP INDEX
+Time: 0.367 ms
+DROP INDEX
+Time: 0.414 ms
+DROP TEXT SEARCH CONFIGURATION
+Time: 1.245 ms
+CREATE TEXT SEARCH CONFIGURATION
+Time: 3.731 ms
+ALTER TEXT SEARCH CONFIGURATION
+Time: 3.241 ms
+ALTER TABLE
+Time: 2.891 ms
+ALTER TABLE
+Time: 4.472 ms
+UPDATE 475066
+Time: 111701.440 ms
+CREATE INDEX
+Time: 40141.995 ms
+CREATE INDEX
+Time: 8347.184 ms
+CREATE INDEX
+Time: 25548.567 ms
+ANALYZE
+Time: 6420.698 ms
+ indexed_contracts 
+-------------------
+            475066
+(1 row)
+
+Time: 1015.524 ms

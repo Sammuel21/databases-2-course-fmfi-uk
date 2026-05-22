@@ -1,0 +1,44 @@
+Pager usage is off.
+Timing is on.
+=== ST_Distance filter ===
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=3248.27..3248.28 rows=1 width=0) (actual time=45.117..45.117 rows=1 loops=1)
+   CTE station
+     ->  Limit  (cost=0.00..686.93 rows=1 width=32) (actual time=1.286..1.287 rows=1 loops=1)
+           ->  Seq Scan on planet_osm_point  (cost=0.00..686.93 rows=1 width=32) (actual time=1.286..1.286 rows=1 loops=1)
+                 Filter: ((name = 'Bratislava hlavná stanica'::text) AND (railway = 'station'::text))
+                 Rows Removed by Filter: 12595
+   ->  Nested Loop  (cost=0.00..2539.29 rows=8821 width=0) (actual time=37.584..45.056 rows=1509 loops=1)
+         Join Filter: (st_distance(p.way, s.way) < 0.01::double precision)
+         Rows Removed by Join Filter: 24953
+         ->  CTE Scan on station s  (cost=0.00..0.02 rows=1 width=32) (actual time=1.289..1.291 rows=1 loops=1)
+         ->  Seq Scan on planet_osm_point p  (cost=0.00..554.62 rows=26462 width=32) (actual time=0.002..1.758 rows=26462 loops=1)
+ Planning time: 0.664 ms
+ Execution time: 45.187 ms
+(13 rows)
+
+Time: 47.478 ms
+=== ST_DWithin filter ===
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=703.16..703.17 rows=1 width=0) (actual time=3.059..3.059 rows=1 loops=1)
+   CTE station
+     ->  Limit  (cost=0.00..686.93 rows=1 width=32) (actual time=0.765..0.766 rows=1 loops=1)
+           ->  Seq Scan on planet_osm_point  (cost=0.00..686.93 rows=1 width=32) (actual time=0.765..0.765 rows=1 loops=1)
+                 Filter: ((name = 'Bratislava hlavná stanica'::text) AND (railway = 'station'::text))
+                 Rows Removed by Filter: 12595
+   ->  Nested Loop  (cost=4.30..16.23 rows=1 width=0) (actual time=1.063..3.002 rows=1509 loops=1)
+         ->  CTE Scan on station s  (cost=0.00..0.02 rows=1 width=32) (actual time=0.767..0.768 rows=1 loops=1)
+         ->  Bitmap Heap Scan on planet_osm_point p  (cost=4.30..16.20 rows=1 width=32) (actual time=0.289..2.107 rows=1509 loops=1)
+               Recheck Cond: (way && st_expand(s.way, 0.01::double precision))
+               Filter: ((s.way && st_expand(way, 0.01::double precision)) AND _st_dwithin(way, s.way, 0.01::double precision))
+               Rows Removed by Filter: 549
+               Heap Blocks: exact=76
+               ->  Bitmap Index Scan on planet_osm_point_index  (cost=0.00..4.30 rows=3 width=0) (actual time=0.234..0.234 rows=2058 loops=1)
+                     Index Cond: (way && st_expand(s.way, 0.01::double precision))
+ Planning time: 0.335 ms
+ Execution time: 3.258 ms
+(17 rows)
+
+Time: 4.208 ms

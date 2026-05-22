@@ -1,0 +1,25 @@
+Pager usage is off.
+Timing is on.
+          name          | distance_m 
+------------------------+------------
+ Krishna                |         94
+ Tanker                 |        111
+ UFO                    |        160
+ Au Café                |        170
+ Kolkovna River Park    |        174
+ MS Danubius            |        181
+ Auspic                 |        182
+ Leberfinger            |        183
+ Il Gusto               |        195
+ Francúzska reštaurácia |        199
+ Volej                  |        205
+ mercado                |        209
+ primi                  |        217
+ Kolkovna Eurovea       |        225
+ BeAbout                |        235
+ Prazdroj               |        261
+ Mýtny domček           |        273
+ Portus restaurant      |        278
+(18 rows)
+
+Time: 51.574 ms

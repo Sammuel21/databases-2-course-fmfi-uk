@@ -1,0 +1,12 @@
+Pager usage is off.
+Timing is on.
+              name               
+---------------------------------
+ Most Apollo
+ Most Lafranconi
+ Most SNP
+ Petržalská električka - 1. časť
+ Prístavný most
+(5 rows)
+
+Time: 45.242 ms

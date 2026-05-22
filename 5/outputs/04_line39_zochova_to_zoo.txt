@@ -1,0 +1,10 @@
+Pager usage is off.
+Timing is on.
+     name     | hop 
+--------------+-----
+ Chatam Sófer |   1
+ Park kultúry |   2
+ Lafranconi   |   3
+(3 rows)
+
+Time: 76.764 ms

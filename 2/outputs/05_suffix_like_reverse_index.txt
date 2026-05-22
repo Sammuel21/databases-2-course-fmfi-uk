@@ -1,0 +1,19 @@
+Pager usage is off.
+Timing is on.
+DROP INDEX
+Time: 7.086 ms
+DROP INDEX
+Time: 0.319 ms
+CREATE INDEX
+Time: 677.122 ms
+ANALYZE
+Time: 871.498 ms
+                                                                      QUERY PLAN                                                                      
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using index_documents_on_reverse_supplier_ico on documents  (cost=0.43..8.45 rows=15 width=301) (actual time=0.045..0.051 rows=5 loops=1)
+   Index Cond: ((reverse((supplier_ico)::text) ~>=~ '3375'::text) AND (reverse((supplier_ico)::text) ~<~ '3376'::text))
+   Filter: (reverse((supplier_ico)::text) ~~ '3375%'::text)
+ Total runtime: 0.073 ms
+(4 rows)
+
+Time: 1.624 ms

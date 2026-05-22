@@ -1,0 +1,10 @@
+Pager usage is off.
+Timing is on.
+                 name                  
+---------------------------------------
+ Bratislava - mestská časť Staré Mesto
+ Devín
+ Dúbravka
+(3 rows)
+
+Time: 34.206 ms

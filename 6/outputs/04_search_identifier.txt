@@ -1,0 +1,26 @@
+Pager usage is off.
+Timing is on.
+                                                                     QUERY PLAN                                                                     
+----------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=233.68..233.71 rows=10 width=205) (actual time=6.732..6.811 rows=3 loops=1)
+   ->  Sort  (cost=233.68..233.80 rows=46 width=205) (actual time=6.531..6.572 rows=3 loops=1)
+         Sort Key: published_on
+         Sort Method: quicksort  Memory: 26kB
+         ->  Bitmap Heap Scan on contracts  (cost=52.36..232.69 rows=46 width=205) (actual time=4.938..5.339 rows=3 loops=1)
+               Recheck Cond: ((identifier)::text ~~* '%OIaMIS%'::text)
+               Heap Blocks: exact=3
+               ->  Bitmap Index Scan on contracts_identifier_trgm_idx  (cost=0.00..52.35 rows=46 width=0) (actual time=3.372..3.372 rows=3 loops=1)
+                     Index Cond: ((identifier)::text ~~* '%OIaMIS%'::text)
+ Planning time: 29.166 ms
+ Execution time: 10.523 ms
+(11 rows)
+
+Time: 68.191 ms
+   id   |                                                 name                                                  |   identifier    |                   department                    |                 customer                 |             supplier             | published_on 
+--------+-------------------------------------------------------------------------------------------------------+-----------------+-------------------------------------------------+------------------------------------------+----------------------------------+--------------
+ 731992 | Zmluva o dielo na zabezpečenie informačných systémov o VPM a o regionálnej zamestnanosti a cene práce | 177/OIaMIS/2013 | Ministerstvo práce, sociálnych vecí a rodiny SR | Ústredie práce, sociálnych vecí a rodiny | TREXIMA Bratislava, spol. s r.o. | 2013-06-07
+ 727903 | Zmluva o poskytnutí služieb štandardnej technickej podpory licencií ORACLE                            | 168/OIaMIS/2013 | Ministerstvo práce, sociálnych vecí a rodiny SR | Ústredie práce, sociálnych vecí a rodiny | InterWay, s.r.o.                 | 2013-05-30
+ 726186 | Zmluva o poskytnutí služieb 148/OIaMIS/2013                                                           | 148/OIaMIS/2013 | Ministerstvo práce, sociálnych vecí a rodiny SR | Ústredie práce, sociálnych vecí a rodiny | ui42, spol. s r.o.               | 2013-05-28
+(3 rows)
+
+Time: 3.518 ms

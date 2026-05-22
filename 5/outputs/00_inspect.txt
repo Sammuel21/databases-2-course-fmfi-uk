@@ -1,0 +1,60 @@
+Pager usage is off.
+Timing is on.
+ product_parts_count 
+---------------------
+                  11
+(1 row)
+
+Time: 29.474 ms
+ stops_count 
+-------------
+         590
+(1 row)
+
+Time: 7.544 ms
+ connections_count 
+-------------------
+              1921
+(1 row)
+
+Time: 2.690 ms
+ id |     name     | part_of_id | price | shipping_time 
+----+--------------+------------+-------+---------------
+  1 | chair        |            |   130 |             3
+  2 | armrest      |          1 |    12 |             5
+  3 | metal leg    |          1 |     9 |             5
+  4 | metal rod    |          3 |   4.5 |            10
+  5 | cushions     |          2 |    31 |             9
+  6 | red dye      |          5 |   1.5 |             3
+  7 | wooden table |            |   310 |            11
+  8 | wooden leg   |          7 |    10 |             3
+  9 | wood         |          8 |     2 |             1
+ 10 | wood desk    |          7 |    80 |             7
+ 11 | cotton       |          5 |     8 |             4
+(11 rows)
+
+Time: 10.109 ms
+  id  |        start_stop        |      end_stop      | duration | line 
+------+--------------------------+--------------------+----------+------
+ 1717 | Cintorín Slávičie údolie | Televízia          |        1 | 39
+ 1718 | Televízia                | Zoo                |        1 | 39
+ 1719 | Zoo                      | Lafranconi         |        2 | 39
+ 1720 | Lafranconi               | Park kultúry       |        1 | 39
+ 1721 | Park kultúry             | Chatam Sófer       |        2 | 39
+ 1722 | Chatam Sófer             | Zochova            |        3 | 39
+ 1723 | Zochova                  | Nám. 1. mája       |        2 | 39
+ 1724 | Nám. 1. mája             | Blumentál          |        2 | 39
+ 1725 | Blumentál                | Račianske mýto     |        3 | 39
+ 1726 | Račianske mýto           | Trnavské mýto      |        1 | 39
+ 1727 | Trnavské mýto            | Zimný štadión      |        2 | 39
+ 1728 | Zimný štadión            | Bajkalská          |        2 | 39
+ 1729 | Bajkalská                | Sabinovská         |        1 | 39
+ 1730 | Sabinovská               | Trnavská           |        1 | 39
+ 1731 | Trnavská                 | Trnavská-NAD       |        1 | 39
+ 1732 | Trnavská-NAD             | Martinský cintorín |        1 | 39
+ 1733 | Martinský cintorín       | Clementisova       |        0 | 39
+ 1734 | Clementisova             | Ivanská cesta      |        1 | 39
+ 1735 | Ivanská cesta            | Súhvezdná          |        1 | 39
+(19 rows)
+
+Time: 28.473 ms

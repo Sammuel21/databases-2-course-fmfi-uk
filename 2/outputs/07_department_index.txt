@@ -1,0 +1,20 @@
+Pager usage is off.
+Timing is on.
+DROP INDEX
+Time: 0.517 ms
+DROP INDEX
+Time: 0.199 ms
+CREATE INDEX
+Time: 3624.411 ms
+ANALYZE
+Time: 1092.357 ms
+                                                                   QUERY PLAN                                                                   
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on documents  (cost=673.34..16740.95 rows=17667 width=41) (actual time=3.878..25.720 rows=16917 loops=1)
+   Recheck Cond: ((department)::text = 'Rozhlas a televizia Slovenska'::text)
+   ->  Bitmap Index Scan on index_documents_on_department  (cost=0.00..668.93 rows=17667 width=0) (actual time=3.572..3.572 rows=16917 loops=1)
+         Index Cond: ((department)::text = 'Rozhlas a televizia Slovenska'::text)
+ Total runtime: 26.232 ms
+(5 rows)
+
+Time: 27.613 ms

@@ -1,0 +1,41 @@
+Pager usage is off.
+Timing is on.
+            postgis_version            
+---------------------------------------
+ 2.5 USE_GEOS=1 USE_PROJ=1 USE_STATS=1
+(1 row)
+
+Time: 36.564 ms
+    f_table_name    | f_geometry_column | srid |    type    
+--------------------+-------------------+------+------------
+ planet_osm_line    | way               | 4326 | LINESTRING
+ planet_osm_point   | way               | 4326 | POINT
+ planet_osm_polygon | way               | 4326 | GEOMETRY
+ planet_osm_roads   | way               | 4326 | LINESTRING
+(4 rows)
+
+Time: 6.751 ms
+     table_name     | count 
+--------------------+-------
+ planet_osm_point   | 26462
+ planet_osm_line    | 29566
+ planet_osm_polygon | 49606
+ planet_osm_roads   |  2756
+(4 rows)
+
+Time: 12.986 ms
+                                    name                                     | railway | amenity 
+-----------------------------------------------------------------------------+---------+---------
+ Bratislava hlavná stanica                                                   | station | 
+ Fakulta matematiky, fyziky a informatiky Univerzity Komenského v Bratislave |         | 
+(2 rows)
+
+Time: 9.700 ms
+    name     |    boundary    | admin_level | area_m2  
+-------------+----------------+-------------+----------
+ Dlhé diely  | administrative | 10          |  1104277
+ Karlova Ves | administrative | 10          | 11009141
+ Karlova Ves | administrative | 9           | 11009141
+(3 rows)
+
+Time: 7.495 ms

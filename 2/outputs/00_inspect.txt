@@ -1,0 +1,32 @@
+Pager usage is off.
+Timing is on.
+ document_count 
+----------------
+         351224
+(1 row)
+
+Time: 831.936 ms
+ distinct_supplier_ico 
+-----------------------
+                 44641
+(1 row)
+
+Time: 718.461 ms
+ suffix_5733_rows 
+------------------
+                5
+(1 row)
+
+Time: 64.046 ms
+ prefix_57_rows 
+----------------
+             40
+(1 row)
+
+Time: 59.209 ms
+ department_rows 
+-----------------
+           16917
+(1 row)
+
+Time: 60.199 ms

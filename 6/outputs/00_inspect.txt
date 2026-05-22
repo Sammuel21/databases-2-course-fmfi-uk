@@ -1,0 +1,45 @@
+Pager usage is off.
+Timing is on.
+ contracts_count 
+-----------------
+          475066
+(1 row)
+
+Time: 396.517 ms
+ column_name  |     data_type     
+--------------+-------------------
+ id           | integer
+ name         | text
+ identifier   | character varying
+ department   | character varying
+ customer     | character varying
+ supplier     | character varying
+ supplier_ico | integer
+ total_amount | numeric
+ note         | text
+ published_on | date
+(10 rows)
+
+Time: 82.153 ms
+   id   |                                    name                                    |  identifier   |                       department                        |                           customer                            |                         supplier                         | supplier_ico | published_on 
+--------+----------------------------------------------------------------------------+---------------+---------------------------------------------------------+---------------------------------------------------------------+----------------------------------------------------------+--------------+--------------
+ 391712 | Zmluva o podaní výkonu fyzickou osobou a udelení licencie na jeho použitie | ZH2006026     | Rozhlas a televizia Slovenska                           | Rozhlas a televizia Slovenska                                 | Denisa Maderová                                          |     47232480 | 2012-06-01
+ 393236 | Publicita                                                                  | 3/2012        | Ministerstvo školstva, vedy, výskumu a športu SR        | Odborné učilište internátne ValaskáŠvermova 1, 976 46 Valaská | Železiarne Podbrezová a.s.Kolkáreň 35, 976 81 Podbrezová |       315621 | 2012-06-04
+ 394375 | Dodatok č. 2 k zmluve o dielo                                              | 1298/2012-BB  | Ministerstvo životného prostredia SR                    | Slovenský vodohospodársky podnik, štátny podnik               | HNT, s.r.o.                                              |              | 2012-06-06
+ 394224 | Kúpna zmluva                                                               | 798/6453/2012 | Ministerstvo dopravy, výstavby a regionálneho rovoja SR | Slovenská správa ciestMiletičova 19, 829 19 Bratislava        | JM                                                       |         3328 | 2012-06-06
+ 505748 | Zmluva o poistení majetku & efekt                                          | 8001025409    | Ministerstvo hospodárstva SR                            | Slovenská inovačná a energetická agentúra                     | UNIQA poisťovňa, a.s.                                    |       653501 | 2013-01-04
+(5 rows)
+
+Time: 4.193 ms
+ oracle_rows 
+-------------
+          57
+(1 row)
+
+Time: 6583.281 ms
+ oiamis_rows 
+-------------
+           3
+(1 row)
+
+Time: 3193.839 ms

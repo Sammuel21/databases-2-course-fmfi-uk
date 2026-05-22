@@ -1,0 +1,28 @@
+Pager usage is off.
+Timing is on.
+DROP INDEX
+Time: 0.473 ms
+DROP INDEX
+Time: 0.174 ms
+CREATE INDEX
+Time: 875.896 ms
+ANALYZE
+Time: 956.886 ms
+                                                                   QUERY PLAN                                                                   
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on documents  (cost=5.61..447.78 rows=15 width=305) (actual time=0.064..0.549 rows=40 loops=1)
+   Filter: ((supplier_ico)::text ~~ '57%'::text)
+   ->  Bitmap Index Scan on index_documents_on_supplier_ico_like  (cost=0.00..5.60 rows=118 width=0) (actual time=0.056..0.056 rows=40 loops=1)
+         Index Cond: (((supplier_ico)::text ~>=~ '57'::text) AND ((supplier_ico)::text ~<~ '58'::text))
+ Total runtime: 0.576 ms
+(5 rows)
+
+Time: 2.840 ms
+                                               QUERY PLAN                                                
+---------------------------------------------------------------------------------------------------------
+ Index Scan using index_documents_on_supplier_ico_like on documents  (cost=0.42..8.44 rows=15 width=305)
+   Index Cond: (((supplier_ico)::text ~>=~ 'Ahoj'::text) AND ((supplier_ico)::text ~<~ 'Ahok'::text))
+   Filter: ((supplier_ico)::text ~~ 'Ahoj%'::text)
+(3 rows)
+
+Time: 0.293 ms

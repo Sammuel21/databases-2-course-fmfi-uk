@@ -1,0 +1,17 @@
+Pager usage is off.
+Timing is on.
+DROP INDEX
+Time: 0.351 ms
+DROP INDEX
+Time: 0.141 ms
+ANALYZE
+Time: 919.017 ms
+                                                   QUERY PLAN                                                    
+-----------------------------------------------------------------------------------------------------------------
+ Seq Scan on documents  (cost=0.00..19481.30 rows=16742 width=42) (actual time=3.146..51.175 rows=16917 loops=1)
+   Filter: ((department)::text = 'Rozhlas a televizia Slovenska'::text)
+   Rows Removed by Filter: 334307
+ Total runtime: 51.625 ms
+(4 rows)
+
+Time: 52.676 ms

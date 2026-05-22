@@ -1,0 +1,13 @@
+Pager usage is off.
+Timing is on.
+   name    
+-----------
+ armrest
+ cushions
+ red dye
+ cotton
+ metal leg
+ metal rod
+(6 rows)
+
+Time: 62.299 ms

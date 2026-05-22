@@ -1,0 +1,19 @@
+Pager usage is off.
+Timing is on.
+DROP INDEX
+Time: 6.824 ms
+DROP INDEX
+Time: 0.215 ms
+CREATE INDEX
+Time: 5824.777 ms
+VACUUM
+Time: 1236.773 ms
+                                                                            QUERY PLAN                                                                             
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Index Only Scan using index_documents_on_department_customer on documents  (cost=0.55..1295.25 rows=17983 width=41) (actual time=0.035..2.671 rows=16917 loops=1)
+   Index Cond: (department = 'Rozhlas a televizia Slovenska'::text)
+   Heap Fetches: 0
+ Total runtime: 3.132 ms
+(4 rows)
+
+Time: 5.555 ms

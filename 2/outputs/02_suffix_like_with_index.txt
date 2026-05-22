@@ -1,0 +1,19 @@
+Pager usage is off.
+Timing is on.
+DROP INDEX
+Time: 0.540 ms
+DROP INDEX
+Time: 0.155 ms
+CREATE INDEX
+Time: 620.038 ms
+ANALYZE
+Time: 815.548 ms
+                                                 QUERY PLAN                                                 
+------------------------------------------------------------------------------------------------------------
+ Seq Scan on documents  (cost=0.00..19481.30 rows=15 width=305) (actual time=18.422..63.770 rows=5 loops=1)
+   Filter: ((supplier_ico)::text ~~ '%5733'::text)
+   Rows Removed by Filter: 351219
+ Total runtime: 63.793 ms
+(4 rows)
+
+Time: 64.621 ms

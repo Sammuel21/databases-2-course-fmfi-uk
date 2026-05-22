@@ -1,0 +1,38 @@
+Pager usage is off.
+Timing is on.
+        name        
+--------------------
+ Albína Brunovského
+ Beniakova
+ Blyskáčová
+ Cikkerova
+ Dlhé diely I
+ Dlhé diely II
+ Dlhé diely III
+ Ferdiša Kostku
+ Hany Meličkovej
+ Hlaváčikova
+ Iskerníková
+ Jamnického
+ Jána Stanislava
+ Kolískova
+ Komonicová
+ Kresánkova
+ Kuklovská
+ Ľudovíta Fullu
+ Majerníkova
+ Matejkova
+ Nad lúčkami
+ Nad Sihoťou
+ Na Kampárke
+ Pribišova
+ Stoklasová
+ Sumbalova
+ Svíbová
+ Tománkova
+ Veternicová
+ Vincenta Hložníka
+ Vyhliadka
+(31 rows)
+
+Time: 32.145 ms
