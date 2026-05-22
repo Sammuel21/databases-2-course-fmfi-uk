@@ -1,0 +1,58 @@
+﻿Pager usage is off.
+Timing is on.
+=== Experiment 04: total_amount range with total_amount index ===
+DROP INDEX
+Time: 0.423 ms
+DROP INDEX
+Time: 0.147 ms
+CREATE INDEX
+Time: 418.046 ms
+ANALYZE
+Time: 852.900 ms
+=== Current indexes on documents ===
+            indexname            |                                          indexdef                                           
+---------------------------------+---------------------------------------------------------------------------------------------
+ index_documents_on_total_amount | CREATE INDEX index_documents_on_total_amount ON public.documents USING btree (total_amount)
+(1 row)
+
+Time: 1.357 ms
+=== Matching rows ===
+ range_rows 
+------------
+      15707
+(1 row)
+
+Time: 88.823 ms
+=== Query plan, run 1 ===
+                                                                    QUERY PLAN                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on documents  (cost=340.30..14270.26 rows=15988 width=302) (actual time=1.949..6.597 rows=15707 loops=1)
+   Recheck Cond: ((total_amount > 100000::double precision) AND (total_amount <= 999999999::double precision))
+   ->  Bitmap Index Scan on index_documents_on_total_amount  (cost=0.00..336.30 rows=15988 width=0) (actual time=1.232..1.232 rows=15707 loops=1)
+         Index Cond: ((total_amount > 100000::double precision) AND (total_amount <= 999999999::double precision))
+ Total runtime: 7.036 ms
+(5 rows)
+
+Time: 7.592 ms
+=== Query plan, run 2 ===
+                                                                    QUERY PLAN                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on documents  (cost=340.30..14270.26 rows=15988 width=302) (actual time=1.528..5.786 rows=15707 loops=1)
+   Recheck Cond: ((total_amount > 100000::double precision) AND (total_amount <= 999999999::double precision))
+   ->  Bitmap Index Scan on index_documents_on_total_amount  (cost=0.00..336.30 rows=15988 width=0) (actual time=0.953..0.953 rows=15707 loops=1)
+         Index Cond: ((total_amount > 100000::double precision) AND (total_amount <= 999999999::double precision))
+ Total runtime: 6.217 ms
+(5 rows)
+
+Time: 6.628 ms
+=== Query plan, run 3 ===
+                                                                    QUERY PLAN                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on documents  (cost=340.30..14270.26 rows=15988 width=302) (actual time=1.623..6.023 rows=15707 loops=1)
+   Recheck Cond: ((total_amount > 100000::double precision) AND (total_amount <= 999999999::double precision))
+   ->  Bitmap Index Scan on index_documents_on_total_amount  (cost=0.00..336.30 rows=15988 width=0) (actual time=1.031..1.031 rows=15707 loops=1)
+         Index Cond: ((total_amount > 100000::double precision) AND (total_amount <= 999999999::double precision))
+ Total runtime: 6.437 ms
+(5 rows)
+
+Time: 6.803 ms

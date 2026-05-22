@@ -1,0 +1,38 @@
+﻿Pager usage is off.
+Timing is on.
+DROP INDEX
+Time: 7.956 ms
+DROP INDEX
+Time: 0.227 ms
+DROP INDEX
+Time: 0.134 ms
+DROP INDEX
+Time: 0.123 ms
+DROP INDEX
+Time: 0.141 ms
+CREATE INDEX
+Time: 2022.185 ms
+CREATE INDEX
+Time: 454.525 ms
+ANALYZE
+Time: 964.159 ms
+            indexname            |                                          indexdef                                           
+---------------------------------+---------------------------------------------------------------------------------------------
+ index_documents_on_supplier     | CREATE INDEX index_documents_on_supplier ON public.documents USING btree (supplier)
+ index_documents_on_total_amount | CREATE INDEX index_documents_on_total_amount ON public.documents USING btree (total_amount)
+(2 rows)
+
+Time: 2.242 ms
+BEGIN
+Time: 0.128 ms
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Insert on documents  (cost=0.00..589.44 rows=10000 width=303) (actual time=234.772..234.772 rows=0 loops=1)
+   ->  Limit  (cost=0.00..489.44 rows=10000 width=303) (actual time=0.007..3.740 rows=10000 loops=1)
+         ->  Seq Scan on documents documents_1  (cost=0.00..17190.24 rows=351224 width=303) (actual time=0.006..3.122 rows=10000 loops=1)
+ Total runtime: 234.801 ms
+(4 rows)
+
+Time: 235.382 ms
+ROLLBACK
+Time: 0.169 ms

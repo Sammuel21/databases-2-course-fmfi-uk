@@ -1,0 +1,50 @@
+﻿Pager usage is off.
+Timing is on.
+=== Experiment 01: supplier = SPP without supplier index ===
+DROP INDEX
+Time: 1.718 ms
+ANALYZE
+Time: 829.717 ms
+=== Current indexes on documents ===
+ indexname | indexdef 
+-----------+----------
+(0 rows)
+
+Time: 1.419 ms
+=== Matching rows ===
+ spp_rows 
+----------
+       32
+(1 row)
+
+Time: 50.316 ms
+=== Query plan, run 1 ===
+                                                QUERY PLAN                                                 
+-----------------------------------------------------------------------------------------------------------
+ Seq Scan on documents  (cost=0.00..17398.30 rows=8 width=303) (actual time=0.578..48.232 rows=32 loops=1)
+   Filter: ((supplier)::text = 'SPP'::text)
+   Rows Removed by Filter: 351192
+ Total runtime: 48.250 ms
+(4 rows)
+
+Time: 48.836 ms
+=== Query plan, run 2 ===
+                                                QUERY PLAN                                                 
+-----------------------------------------------------------------------------------------------------------
+ Seq Scan on documents  (cost=0.00..17398.30 rows=8 width=303) (actual time=0.520..50.351 rows=32 loops=1)
+   Filter: ((supplier)::text = 'SPP'::text)
+   Rows Removed by Filter: 351192
+ Total runtime: 50.370 ms
+(4 rows)
+
+Time: 50.680 ms
+=== Query plan, run 3 ===
+                                                QUERY PLAN                                                 
+-----------------------------------------------------------------------------------------------------------
+ Seq Scan on documents  (cost=0.00..17398.30 rows=8 width=303) (actual time=0.499..49.320 rows=32 loops=1)
+   Filter: ((supplier)::text = 'SPP'::text)
+   Rows Removed by Filter: 351192
+ Total runtime: 49.336 ms
+(4 rows)
+
+Time: 49.661 ms

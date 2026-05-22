@@ -1,0 +1,52 @@
+﻿Pager usage is off.
+Timing is on.
+=== Experiment 03: total_amount range without total_amount index ===
+DROP INDEX
+Time: 5.015 ms
+DROP INDEX
+Time: 0.202 ms
+ANALYZE
+Time: 856.579 ms
+=== Current indexes on documents ===
+ indexname | indexdef 
+-----------+----------
+(0 rows)
+
+Time: 1.367 ms
+=== Matching rows ===
+ range_rows 
+------------
+      15707
+(1 row)
+
+Time: 51.636 ms
+=== Query plan, run 1 ===
+                                                    QUERY PLAN                                                    
+------------------------------------------------------------------------------------------------------------------
+ Seq Scan on documents  (cost=0.00..18276.36 rows=15550 width=303) (actual time=0.029..52.858 rows=15707 loops=1)
+   Filter: ((total_amount > 100000::double precision) AND (total_amount <= 999999999::double precision))
+   Rows Removed by Filter: 335517
+ Total runtime: 53.322 ms
+(4 rows)
+
+Time: 53.931 ms
+=== Query plan, run 2 ===
+                                                    QUERY PLAN                                                    
+------------------------------------------------------------------------------------------------------------------
+ Seq Scan on documents  (cost=0.00..18276.36 rows=15550 width=303) (actual time=0.031..53.136 rows=15707 loops=1)
+   Filter: ((total_amount > 100000::double precision) AND (total_amount <= 999999999::double precision))
+   Rows Removed by Filter: 335517
+ Total runtime: 53.652 ms
+(4 rows)
+
+Time: 54.012 ms
+=== Query plan, run 3 ===
+                                                    QUERY PLAN                                                    
+------------------------------------------------------------------------------------------------------------------
+ Seq Scan on documents  (cost=0.00..18276.36 rows=15550 width=303) (actual time=0.031..52.487 rows=15707 loops=1)
+   Filter: ((total_amount > 100000::double precision) AND (total_amount <= 999999999::double precision))
+   Rows Removed by Filter: 335517
+ Total runtime: 52.948 ms
+(4 rows)
+
+Time: 53.338 ms

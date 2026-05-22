@@ -1,0 +1,35 @@
+﻿Pager usage is off.
+Timing is on.
+DROP INDEX
+Time: 10.346 ms
+DROP INDEX
+Time: 5.015 ms
+DROP INDEX
+Time: 4.801 ms
+DROP INDEX
+Time: 0.326 ms
+DROP INDEX
+Time: 0.149 ms
+CREATE INDEX
+Time: 1960.642 ms
+ANALYZE
+Time: 827.961 ms
+ distinct_type_values 
+----------------------
+                    4
+(1 row)
+
+Time: 739.399 ms
+BEGIN
+Time: 0.166 ms
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Insert on documents  (cost=0.00..609.65 rows=10000 width=303) (actual time=56.254..56.254 rows=0 loops=1)
+   ->  Limit  (cost=0.00..509.65 rows=10000 width=303) (actual time=0.005..2.213 rows=10000 loops=1)
+         ->  Seq Scan on documents documents_1  (cost=0.00..17900.24 rows=351224 width=303) (actual time=0.004..1.744 rows=10000 loops=1)
+ Total runtime: 56.286 ms
+(4 rows)
+
+Time: 56.833 ms
+ROLLBACK
+Time: 0.179 ms
