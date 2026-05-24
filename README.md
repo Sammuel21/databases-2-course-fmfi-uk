@@ -1,5 +1,7 @@
 # Databases (2)
 
+Autor: Samuel Guláš, 1mAIN, FMFI UK
+
 Laby obsahuju nasledovnu strukturu:
 
 ```text
