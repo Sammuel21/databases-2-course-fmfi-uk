@@ -1,0 +1,23 @@
+{
+  "size": 0,
+  "aggs": {
+    "by_species": {
+      "terms": {
+        "field": "species.keyword",
+        "size": 10
+      },
+      "aggs": {
+        "avg_body_mass_g": {
+          "avg": {
+            "field": "body_mass_g"
+          }
+        },
+        "avg_flipper_length_mm": {
+          "avg": {
+            "field": "flipper_length_mm"
+          }
+        }
+      }
+    }
+  }
+}

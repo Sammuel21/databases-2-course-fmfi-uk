@@ -1,0 +1,58 @@
+﻿{
+    "took":  3,
+    "timed_out":  false,
+    "_shards":  {
+                    "total":  1,
+                    "successful":  1,
+                    "skipped":  0,
+                    "failed":  0
+                },
+    "hits":  {
+                 "total":  {
+                               "value":  344,
+                               "relation":  "eq"
+                           },
+                 "max_score":  null,
+                 "hits":  [
+
+                          ]
+             },
+    "aggregations":  {
+                         "by_species":  {
+                                            "doc_count_error_upper_bound":  0,
+                                            "sum_other_doc_count":  0,
+                                            "buckets":  [
+                                                            {
+                                                                "key":  "Adelie",
+                                                                "doc_count":  152,
+                                                                "avg_body_mass_g":  {
+                                                                                        "value":  3700.662251655629
+                                                                                    },
+                                                                "avg_flipper_length_mm":  {
+                                                                                              "value":  189.95364238410596
+                                                                                          }
+                                                            },
+                                                            {
+                                                                "key":  "Gentoo",
+                                                                "doc_count":  124,
+                                                                "avg_body_mass_g":  {
+                                                                                        "value":  5076.016260162602
+                                                                                    },
+                                                                "avg_flipper_length_mm":  {
+                                                                                              "value":  217.1869918699187
+                                                                                          }
+                                                            },
+                                                            {
+                                                                "key":  "Chinstrap",
+                                                                "doc_count":  68,
+                                                                "avg_body_mass_g":  {
+                                                                                        "value":  3733.0882352941176
+                                                                                    },
+                                                                "avg_flipper_length_mm":  {
+                                                                                              "value":  195.8235294117647
+                                                                                          }
+                                                            }
+                                                        ]
+                                        }
+                     }
+}

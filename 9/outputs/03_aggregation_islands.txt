@@ -1,0 +1,40 @@
+﻿{
+    "took":  3,
+    "timed_out":  false,
+    "_shards":  {
+                    "total":  1,
+                    "successful":  1,
+                    "skipped":  0,
+                    "failed":  0
+                },
+    "hits":  {
+                 "total":  {
+                               "value":  344,
+                               "relation":  "eq"
+                           },
+                 "max_score":  null,
+                 "hits":  [
+
+                          ]
+             },
+    "aggregations":  {
+                         "by_island":  {
+                                           "doc_count_error_upper_bound":  0,
+                                           "sum_other_doc_count":  0,
+                                           "buckets":  [
+                                                           {
+                                                               "key":  "Biscoe",
+                                                               "doc_count":  168
+                                                           },
+                                                           {
+                                                               "key":  "Dream",
+                                                               "doc_count":  124
+                                                           },
+                                                           {
+                                                               "key":  "Torgersen",
+                                                               "doc_count":  52
+                                                           }
+                                                       ]
+                                       }
+                     }
+}

@@ -1,0 +1,84 @@
+﻿{
+    "took":  5,
+    "timed_out":  false,
+    "_shards":  {
+                    "total":  1,
+                    "successful":  1,
+                    "skipped":  0,
+                    "failed":  0
+                },
+    "hits":  {
+                 "total":  {
+                               "value":  168,
+                               "relation":  "eq"
+                           },
+                 "max_score":  2.0384774,
+                 "hits":  [
+                              {
+                                  "_index":  "penguins",
+                                  "_type":  "_doc",
+                                  "_id":  "221",
+                                  "_score":  2.0384774,
+                                  "_source":  {
+                                                  "body_mass_g":  4500,
+                                                  "species":  "Gentoo",
+                                                  "year":  null,
+                                                  "island":  "Biscoe",
+                                                  "sex":  "FEMALE"
+                                              }
+                              },
+                              {
+                                  "_index":  "penguins",
+                                  "_type":  "_doc",
+                                  "_id":  "222",
+                                  "_score":  2.0384774,
+                                  "_source":  {
+                                                  "body_mass_g":  5700,
+                                                  "species":  "Gentoo",
+                                                  "year":  null,
+                                                  "island":  "Biscoe",
+                                                  "sex":  "MALE"
+                                              }
+                              },
+                              {
+                                  "_index":  "penguins",
+                                  "_type":  "_doc",
+                                  "_id":  "223",
+                                  "_score":  2.0384774,
+                                  "_source":  {
+                                                  "body_mass_g":  4450,
+                                                  "species":  "Gentoo",
+                                                  "year":  null,
+                                                  "island":  "Biscoe",
+                                                  "sex":  "FEMALE"
+                                              }
+                              },
+                              {
+                                  "_index":  "penguins",
+                                  "_type":  "_doc",
+                                  "_id":  "224",
+                                  "_score":  2.0384774,
+                                  "_source":  {
+                                                  "body_mass_g":  5700,
+                                                  "species":  "Gentoo",
+                                                  "year":  null,
+                                                  "island":  "Biscoe",
+                                                  "sex":  "MALE"
+                                              }
+                              },
+                              {
+                                  "_index":  "penguins",
+                                  "_type":  "_doc",
+                                  "_id":  "225",
+                                  "_score":  2.0384774,
+                                  "_source":  {
+                                                  "body_mass_g":  5400,
+                                                  "species":  "Gentoo",
+                                                  "year":  null,
+                                                  "island":  "Biscoe",
+                                                  "sex":  "MALE"
+                                              }
+                              }
+                          ]
+             }
+}

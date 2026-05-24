@@ -1,0 +1,11 @@
+{
+  "size": 0,
+  "aggs": {
+    "by_island": {
+      "terms": {
+        "field": "island.keyword",
+        "size": 10
+      }
+    }
+  }
+}
